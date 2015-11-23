@@ -1,5 +1,7 @@
 # Cheesy Categories
 
+Categorizing cheeses with two MySQL tables.
+
 ## Setup
 
 Execute the SQL found in the db folder.
