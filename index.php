@@ -1,6 +1,6 @@
 <?php
     require('db_connect.php');
-    $sql = "SELECT * FROM categories";
+    $sql = "SELECT * FROM categories ORDER BY name";
     $statement = $db->prepare($sql);
     $statement->execute();
     $categories = $statement->fetchAll();
