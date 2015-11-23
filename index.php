@@ -24,5 +24,7 @@
     <?php else: ?>
         <p>There are no cheese categories in the database.</p>
     <?php endif ?>
+    <p><a href="new_cheese.php">New Cheese</a></p>
+    <p><a href="new_category.php">New Category</a></p>
 </body>
 </html>

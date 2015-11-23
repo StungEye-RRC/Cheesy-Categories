@@ -17,8 +17,8 @@
         exit;
     }
 
-    $category_name = $statement->fetch()['name']; 
-    
+    $category_name = $statement->fetch()['name'];
+
     $sql = "SELECT * FROM cheeses WHERE category_id = :id";
     $statement = $db->prepare($sql);
     $statement->bindValue('id', $id);
@@ -35,14 +35,13 @@
         <ul>
             <?php while ($row = $statement->fetch()): ?>
                 <li>
-                    <a href="category.php?id=<?= $row['id'] ?>">
-                        <?= $row['name'] ?>
-                    </a>
+                    <?= $row['name'] ?>
                 </li>
             <?php endwhile ?>
         </ul>
     <?php else: ?>
         <p>There are no cheese categories in the database.</p>
     <?php endif ?>
+    <p><a href="index.php">Back</a></p>
 </body>
 </html>
