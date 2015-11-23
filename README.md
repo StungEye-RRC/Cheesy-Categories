@@ -2,7 +2,7 @@
 
 Categorizing cheeses with two MySQL tables.
 
-# Setup
+## Setup
 
 Execute the SQL found in the db folder.
 
