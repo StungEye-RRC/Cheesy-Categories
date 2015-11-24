@@ -32,7 +32,9 @@
         <label for"category_id">Category</label>
         <select id="category_id" name="category_id">
             <?php foreach($categories as $category): ?>
-                <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+                <option value="<?= $category['id'] ?>">
+                    <?= $category['name'] ?>
+                </option>
             <?php endforeach ?>
         </select>
         <input type="submit" value="New Cheese">

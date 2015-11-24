@@ -13,6 +13,7 @@
     $statement->execute();
 
     if ($statement->rowCount() != 1) {
+        // No rows were returned so this category does not exist.
         header('Location: index.php');
         exit;
     }
@@ -23,6 +24,7 @@
     $statement = $db->prepare($sql);
     $statement->bindValue('id', $id);
     $statement->execute();
+    $cheeses = $statement->fetchAll();
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,13 +33,11 @@
 </head>
 <body>
     <h1><?= $category_name ?> Cheese</h1>
-    <?php if ($statement->rowCount() > 0): ?>
+    <?php if (count($cheeses) > 0): ?>
         <ul>
-            <?php while ($row = $statement->fetch()): ?>
-                <li>
-                    <?= $row['name'] ?>
-                </li>
-            <?php endwhile ?>
+            <?php foreach($cheeses as $cheese): ?>
+                <li><?= $cheese['name'] ?></li>
+            <?php endforeach ?>
         </ul>
     <?php else: ?>
         <p>There are no cheese categories in the database.</p>
